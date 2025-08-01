@@ -9,7 +9,7 @@ def build_weighted_pool(draws):
         pool.extend([num] * count)
     return pool, freq
 
-def simulate_draws(draws, picks=6, simulations=10000):
+def simulate_draws(draws, picks=6, simulations=100000):
     pool, freq = build_weighted_pool(draws)
     results = Counter()
     for _ in range(simulations):
