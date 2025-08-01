@@ -9,10 +9,10 @@ def build_weighted_pool(draws):
         pool.extend([num] * count)
     return pool, freq
 
-def simulate_draws(draws, picks=5, simulations=1000):
+def simulate_draws(draws, picks=6, simulations=10000):
     pool, freq = build_weighted_pool(draws)
     results = Counter()
     for _ in range(simulations):
         combo = tuple(sorted(random.sample(pool, picks)))
         results[combo] += 1
-    return results.most_common(5), freq
+    return results.most_common(6), freq
